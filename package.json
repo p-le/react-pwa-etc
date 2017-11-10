@@ -5,7 +5,9 @@
   "author": "Phu Quang Le <phu.le.dev@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "./node_modules/.bin/webpack-dev-server"
+    "start": "./node_modules/.bin/webpack-dev-server",
+    "build": "./node_modules/.bin/webpack -p",
+    "deploy": "firebase deploy"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

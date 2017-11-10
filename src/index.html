@@ -11,5 +11,18 @@
       <header id="header"></header>
       <div id="app"></div>
       <footer id="footer"></footer>
+      <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+      <script>
+        var config = {
+          apiKey: "AIzaSyCHGt-caNyYQexHARKqDE2KVKmOfn3j-wY",
+          authDomain: "react-pwa-a55fa.firebaseapp.com",
+          databaseURL: "https://react-pwa-a55fa.firebaseio.com",
+          projectId: "react-pwa-a55fa",
+          storageBucket: "",
+          messagingSenderId: "1071099610692"
+        };
+        window.firebase = firebase;
+        firebase.initializeApp(config);
+      </script>
   </body>
 </html>

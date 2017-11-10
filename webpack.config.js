@@ -7,6 +7,7 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 // const WebpackMonitor = require('webpack-monitor');
 
 const TARGET = process.env.npm_lifecycle_event;
+const devServerPort = 9001;
 
 function isExternal(module) {
   const context = module.context;
@@ -61,7 +62,7 @@ const devConfig = {
   entry: {
     app: [
       'react-hot-loader/patch',
-      'webpack-dev-server/client?http://localhost:9001',
+      `webpack-dev-server/client?http://localhost:${devServerPort}`,
       'webpack/hot/only-dev-server',
       './src/index.js'
     ]
@@ -79,7 +80,7 @@ const devConfig = {
     compress: true,
     historyApiFallback: true,
     inline: true,
-    port: 9001,
+    port: devServerPort,
     hot: true,
   }
 };
@@ -94,7 +95,7 @@ const buildConfig = {
     app: './src/index.js',
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build'),
     filename: '[name].[chunkhash].js'
   },
 };

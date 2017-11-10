@@ -6,8 +6,8 @@ import {
 } from 'react-router-dom'
 import Loadable from 'react-loadable';
 
-import { Footer } from './Footer';
-import { Header } from './Header';
+import { Footer } from './components/Footer';
+import { Header } from './components/Header';
 
 const Loading = () => {
   return <div>Loading...</div>;
