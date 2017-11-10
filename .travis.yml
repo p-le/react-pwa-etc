@@ -5,6 +5,8 @@ cache: yarn
 before_script:
   - npm install -g firebase-tools
   - yarn install
+script:
+  - yarn test
 after_success:
   - yarn run build
   - yarn run deploy

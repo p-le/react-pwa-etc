@@ -5,10 +5,12 @@ module.exports = {
         "commonjs": true,
         "es6": true,
         "node": true,
+        "jest": true,
     },
     "extends": [
       "eslint:recommended",
-      "plugin:react/recommended"
+      "plugin:react/recommended",
+      "plugin:jest/recommended"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -18,7 +20,8 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "jest"
     ],
     "rules": {
         "linebreak-style": [

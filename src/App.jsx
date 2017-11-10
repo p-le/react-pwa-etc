@@ -1,4 +1,6 @@
 import React from 'react';
+import ReactModal from 'react-modal';
+
 import {
   BrowserRouter as Router,
   Route,
@@ -29,6 +31,24 @@ const DynamicContact = Loadable({
 });
 
 export class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      showModal :false,
+    };
+  }
+
+  handleOpenModal = () => {
+    this.setState({
+      showModal: true
+    });
+  }
+  handleCloseModal = () => {
+    this.setState({
+      showModal: false
+    });
+  }
+
   render() {
     return (
       <div>
@@ -46,17 +66,13 @@ export class App extends React.Component {
             <Route path="/contact" component={DynamicContact} />
           </div>
         </Router>
-        <button className="btn-large">Large</button>
-        <button>Default</button>
-        <button className="btn-small">Small</button>
-        <a href="#" className="paper-btn">Link</a>
-        <div className="row">
-          <div className="col-6 col">
-            <button className="btn-block">Block level</button>
-          </div>
-        </div>
-        <button className="disabled">Disabled</button>
-        <button disabled>Disabled</button>
+        <button onClick={this.handleOpenModal}>Login</button>
+        <ReactModal
+           isOpen={this.state.showModal}
+           contentLabel="Login"
+        >
+          <button onClick={this.handleCloseModal}>Close Modal</button>
+        </ReactModal>
         <Header />
       </div>
     );

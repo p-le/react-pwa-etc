@@ -66,3 +66,4 @@ typings/
 __logs
 dist
 build
+__coverage__
